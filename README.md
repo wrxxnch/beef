@@ -68,7 +68,13 @@ Documentation
 
 Usage
 -----
-disable safe ode on config.yaml for offensive options
+'''code
+==Wrxxnch was here=====
+disable safe mode on config.yaml for offensive options
+
+htmls pages are on /usr/share/beef-xss/extensions/demos/html
+'''
+=======
 To get started, simply execute beef and follow the instructions:
 
 ```
