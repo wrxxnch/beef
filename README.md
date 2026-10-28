@@ -68,7 +68,7 @@ Documentation
 
 Usage
 -----
-
+disable safe ode on config.yaml for offensive options
 To get started, simply execute beef and follow the instructions:
 
 ```
