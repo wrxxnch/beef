@@ -9,7 +9,7 @@ beef:
             enable: true
             category: ["Browser", "Hooked Domain"]
             name: "Redirect Browser (Standard)"
-            description: "This module will redirect the selected hooked browser to the address specified in the 'Redirect URL' input."
+            description: "Redirects to the specified URL in the current tab or an optional new tab. Does not inject hook.js into the destination."
             authors: ["wade", "vo"]
             target:
                 user_notify: ["ALL"]

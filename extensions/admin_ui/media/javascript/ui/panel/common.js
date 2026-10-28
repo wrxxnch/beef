@@ -234,11 +234,38 @@ function genExistingExploitPanel(panel, command_id, zombie, sb) {
 			var grid = new Ext.grid.GridPanel({
 				id: 'command-results-grid-zombie-'+zombie.session,
 				store: grid_store,
-				border: false,
-				hideHeaders: true,
-				title: 'Command results',
-				
-				viewConfig: {
+					border: false,
+					hideHeaders: true,
+					title: 'Command results',
+					tbar: [{
+						text: 'Copy visible results',
+						handler: function() {
+							var text = grid.getEl().dom.innerText || grid.getEl().dom.textContent || '';
+							if (!text) return;
+
+							var fallbackCopy = function() {
+								var fallback = document.createElement('textarea');
+								fallback.value = text;
+								fallback.setAttribute('readonly', '');
+								fallback.style.position = 'fixed';
+								fallback.style.opacity = '0';
+								document.body.appendChild(fallback);
+								fallback.select();
+								try { document.execCommand('copy'); } catch (e) {}
+								document.body.removeChild(fallback);
+							};
+
+							if (navigator.clipboard && navigator.clipboard.writeText) {
+								navigator.clipboard.writeText(text).then(function() {
+									if (typeof commands_statusbar !== 'undefined') commands_statusbar.showValid('Results copied');
+								}, fallbackCopy);
+							} else {
+								fallbackCopy();
+							}
+						}
+					}],
+
+					viewConfig: {
 					forceFit:true
 				},
 

