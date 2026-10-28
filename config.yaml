@@ -7,6 +7,9 @@
 
 beef:
     version: '0.6.0.0'
+    # Enable consent-first lab safeguards for supported modules.
+    # Keep enabled unless every participant has explicitly opted in.
+    safe_mode: true
     # More verbose messages (server-side)
     debug: false
     # More verbose messages (client-side)
