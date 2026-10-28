@@ -1,0 +1,13 @@
+#
+# Safe laboratory module: same-origin, allowlisted page preview.
+#
+beef:
+    module:
+        safe_page_preview:
+            enable: true
+            category: ["Browser", "Safe Lab"]
+            name: "Safe Lab: Allowlisted Page Preview"
+            description: "Previews only same-origin allowlisted paths with forms, credentials, cookies, and hook injection disabled."
+            authors: ["BeEF Safe Lab"]
+            target:
+                user_notify: ["ALL"]

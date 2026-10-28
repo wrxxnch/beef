@@ -10,6 +10,22 @@ beef:
     # Enable consent-first lab safeguards for supported modules.
     # Keep enabled unless every participant has explicitly opted in.
     safe_mode: true
+    # Consent-first laboratory limits. These never enable cross-tab cookie
+    # access, persistent tracking, remote screen capture, or hook injection.
+    safe_lab:
+        enabled: true
+        allowed_origins: ["http://127.0.0.1:3000", "http://localhost:3000"]
+        cookie_scope: "current_document_origin"
+        mask_cookie_values: true
+        location_max_duration_seconds: 60
+        location_requires_visible_consent: true
+        screen_mode: "local_preview_only"
+        screen_requires_native_prompt: true
+        clone_allowed_paths: ["/lab/", "/safe-lab/"]
+        clone_strip_forms: true
+        clone_strip_credentials: true
+        clone_strip_cookies: true
+        clone_inject_hook: false
     # More verbose messages (server-side)
     debug: false
     # More verbose messages (client-side)

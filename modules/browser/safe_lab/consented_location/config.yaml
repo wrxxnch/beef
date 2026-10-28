@@ -1,0 +1,13 @@
+#
+# Safe laboratory module: bounded geolocation with visible consent.
+#
+beef:
+    module:
+        consented_location:
+            enable: true
+            category: ["Host", "Safe Lab"]
+            name: "Safe Lab: Consented Location"
+            description: "Requests geolocation only after visible opt-in, expires automatically, supports revoke, and records audit events."
+            authors: ["BeEF Safe Lab"]
+            target:
+                user_notify: ["ALL"]

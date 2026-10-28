@@ -1,0 +1,13 @@
+#
+# Safe laboratory module: masked, current-origin cookies only.
+#
+beef:
+    module:
+        masked_cookies:
+            enable: true
+            category: ["Browser", "Safe Lab"]
+            name: "Safe Lab: Masked Current-Origin Cookies"
+            description: "Shows only cookie names and masked values after visible consent; never reads other tabs or exports tokens."
+            authors: ["BeEF Safe Lab"]
+            target:
+                user_notify: ["ALL"]

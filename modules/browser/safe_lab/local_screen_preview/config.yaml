@@ -1,0 +1,13 @@
+#
+# Safe laboratory module: local-only getDisplayMedia preview.
+#
+beef:
+    module:
+        local_screen_preview:
+            enable: true
+            category: ["Browser", "Safe Lab"]
+            name: "Safe Lab: Local Screen Preview"
+            description: "Uses the native getDisplayMedia prompt and shows a local preview only; no remote stream is sent."
+            authors: ["BeEF Safe Lab"]
+            target:
+                user_notify: ["ALL"]
