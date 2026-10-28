@@ -6,7 +6,7 @@
 
 beef.execute(function() {
 	var redirectUrl = "<%= @redirect_url %>";
-	var openNewTab = "<%= @open_new_tab %>" === "true";
+	var openNewTab = ["true", "on", "1"].indexOf("<%= @open_new_tab %>") !== -1;
 
 	if (openNewTab) {
 		window.open(redirectUrl, '_blank', 'noopener,noreferrer');
